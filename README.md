@@ -22,7 +22,7 @@ This repo is separate from the organoostudio.com site ([Organoo-Redesign](https:
 - **Arbor & Co.:** editorial storefront with shop-the-look hero, shop filters, product pages, cart, discount codes and 3-step checkout.
 - **Sangkarloka:** Organoo's own plant shop in Bahasa Indonesia (EN toggle), plant-shelf hero with cut-out plants, sentence-builder plant match, checkout with JNE/SiCepat/GoSend and BCA VA/QRIS/COD. No fabricated reviews.
 - **Halden & Rowe:** heavy scroll motion (pinned horizontal services, stacking cards, word fill), planning calculator, and a consultation booking wizard with time zones.
-- **FORMA:** daily QR check-in with anti-fraud rules (rotating 30-second codes, screenshot and card-sharing detection, off-peak and expiry checks), a front-desk scanner, and an admin with CSV export. The QR encoder is hand-written (`src/qr.js`).
+- **FORMA:** daily QR check-in with anti-fraud rules (rotating 30-second codes, screenshot and card-sharing detection, off-peak and expiry checks), a front-desk scanner, and an admin with CSV export. The QR encoder is hand-written (`js/qr.js`).
 - **Aurelle Estates:** listings with filters, grid/split/map views, compare, property pages with floor plan, mortgage calculator and viewing booking, off-plan unit reservations, and an instant valuation.
 - **Strata Atelier:** procedural three.js architecture. A scroll-driven film builds a house from sketch to lit dusk. Six live 3D models with sun study, section cut, exploded floors and PNG stills, plus a parametric Massing Lab.
 
@@ -30,14 +30,23 @@ This repo is separate from the organoostudio.com site ([Organoo-Redesign](https:
 
 ```
 NN-name/
-  index.html     # the finished page (open this)
-  photos/        # Unsplash stock photos used by the page
-  CREDITS.txt    # photo sources and notes
-  src/           # source, for sites 04–09
-  build.sh       # rebuilds index.html from src/ (sh build.sh)
+  index.html      # page structure (open this)
+  css/style.css   # all styling
+  js/             # all scripts
+  photos/         # Unsplash stock photos (sites 04–09)
+  CREDITS.txt     # photo sources and notes (sites 04–09)
 ```
 
-Sites 01–03 are single-file pages with inline illustrations, so they have no `src/` or photos.
+JavaScript files per site:
+
+| Site | `js/` |
+| --- | --- |
+| 01–03, 06, 08 | `app.js` |
+| 04 Arbor & Co., 05 Sangkarloka | `art.js` (SVG illustrations) + `app.js` |
+| 07 FORMA | `qr.js` (hand-written QR encoder) + `app.js` |
+| 09 Strata Atelier | `engine.js` (three.js 3D engine) + `app.js` |
+
+Scripts are plain classic scripts loaded in order at the end of `<body>`, with no build step. Sites 01–03 keep one inline line in `<head>` that forces the light theme before first paint, and Strata keeps its import map inline because browsers require it in the page.
 
 ## Notes
 

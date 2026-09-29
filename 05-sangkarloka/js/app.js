@@ -296,3 +296,5 @@ function route(){clearInterval(S.lensT);closeAll();const h=(location.hash||'#hom
 addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['pick','quiz','gift','care','moments','bulk','faq'].includes(h)){document.getElementById(h)?.scrollIntoView({behavior:'smooth'});return}route()});
 window.__boot=(logo,logoW)=>{LOGO=logo;LOGO_W=logoW;route()};
 })();
+
+__boot('brand/logo.png','brand/logo-white.png');

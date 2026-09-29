@@ -198,7 +198,7 @@ async function saveStill(name){if(!E){toast('3D is not available here');return}
 
 /* ---------- CINE engine ---------- */
 const K=[[0,[34,21,40],[1,2.4,1],30],[.12,[8,50,30],[2,0,2],32],[.3,[-30,8,22],[-1,3,0],30],[.5,[27,7.5,15],[5,4.5,1],28],[.68,[21,4.2,30],[3,3.6,2],30],[.86,[33,2.6,25],[4,3,3],28],[1,[44,11,46],[2,3,2],30]];
-function crv(pts,t){const n=pts.length-1;const f=t*n;let i=Math.min(n-1,Math.floor(f));const u=f-i;const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(n,i+2)];const r=[];for(let k=0;k<3;k++){const a=p0[k],b=p1[k],c=p2[k],d=p3[k];r.push(.5*((2*b)+(-a+c)*u+(2*a-5*b+4*c-d)*u*u+(-a+3*b-3*c+d)*u*u*u))}return r}
+function crv(pts,t){t=clamp(t||0,0,1);const n=pts.length-1;const f=t*n;let i=Math.min(n-1,Math.floor(f));const u=f-i;const p0=pts[Math.max(0,i-1)],p1=pts[i],p2=pts[i+1],p3=pts[Math.min(n,i+2)];const r=[];for(let k=0;k<3;k++){const a=p0[k],b=p1[k],c=p2[k],d=p3[k];r.push(.5*((2*b)+(-a+c)*u+(2*a-5*b+4*c-d)*u*u+(-a+3*b-3*c+d)*u*u*u))}return r}
 function camAt(p){let i=0;while(i<K.length-2&&p>K[i+1][0])i++;const a=K[i],b=K[i+1];const t=ss(0,1,clamp((p-a[0])/(b[0]-a[0]),0,1));const u=(i+t)/(K.length-1);return{pos:crv(K.map(k=>k[1]),u),tgt:crv(K.map(k=>k[2]),u),fov:lerp(a[3],b[3],t)}}
 const cine={p:0,ch:-1,intro:0,t0:0,on:false,hot:null};
 function cineInit(){const host=$('#cineHost');if(!host)return;cine.ch=-1;cine.p=-1;
@@ -206,7 +206,7 @@ function cineInit(){const host=$('#cineHost');if(!host)return;cine.ch=-1;cine.p=
   cine.t0=performance.now();cine.intro=RM||cine.seen?1:0;cine.seen=true;cine.on=true;cineUpdate(cineP(),true);
   const H=E.hot();$('#cineHot').innerHTML=H.map(h=>`<div class="hot"><i>${h.n}</i><span>${esc(h.t)}</span></div>`).join('');cine.hot=$$('#cineHot .hot');
   E.S.onFrame=cineFrame})}
-function cineP(){const c=$('#cine');if(!c)return 0;const r=c.getBoundingClientRect();return clamp(-r.top/(r.height-innerHeight),0,1)}
+function cineP(){const c=$('#cine');if(!c)return 0;const r=c.getBoundingClientRect();const d=r.height-innerHeight;return d>1?clamp(-r.top/d,0,1):0}
 function cineUpdate(p,force){if(!E||!cine.on)return;if(!force&&Math.abs(p-cine.p)<1e-4&&cine.intro>=1)return;cine.p=p;const S3=E.S;
  const R=RM?1:0;
  S3.draw=Math.min(1,cine.intro);
