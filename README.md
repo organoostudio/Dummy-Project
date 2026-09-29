@@ -16,6 +16,36 @@ This repo is separate from the organoostudio.com site ([Organoo-Redesign](https:
 | 08 | [`08-aurelle-estates`](08-aurelle-estates/) | Real estate & property development | Aurelle Estates | Ivory & Ember `#F2622E` |
 | 09 | [`09-strata-atelier`](09-strata-atelier/) | Architecture / interiors / creative studio (cinematic 3D) | Strata Atelier | Concrete & Signal `#FFC21A` |
 
+## Gallery
+
+| | | |
+| --- | --- | --- |
+| <img src="01-lumetric/preview/cover.jpg" width="300" alt="Lumetric cover"> | <img src="02-tandem/preview/cover.jpg" width="300" alt="Tandem cover"> | <img src="03-stockroom/preview/cover.jpg" width="300" alt="Stockroom cover"> |
+| **Lumetric** | **Tandem** | **Stockroom** |
+| <img src="04-arbor-and-co/preview/cover.jpg" width="300" alt="Arbor & Co. cover"> | <img src="05-sangkarloka/preview/cover.jpg" width="300" alt="Sangkarloka cover"> | <img src="06-halden-and-rowe/preview/cover.jpg" width="300" alt="Halden & Rowe cover"> |
+| **Arbor & Co.** | **Sangkarloka** | **Halden & Rowe** |
+| <img src="07-forma/preview/cover.jpg" width="300" alt="FORMA cover"> | <img src="08-aurelle-estates/preview/cover.jpg" width="300" alt="Aurelle Estates cover"> | <img src="09-strata-atelier/preview/cover.jpg" width="300" alt="Strata Atelier cover"> |
+| **FORMA** | **Aurelle Estates** | **Strata Atelier** |
+
+## Preview images
+
+Every site has a `preview/` folder with ready-made material for portfolio posts and motion videos:
+
+```
+NN-name/preview/
+  cover.jpg            # 3200×2400 presentation shot on the brand colour (Dribbble 1600×1200 @2x)
+  mockup-laptop.png    # hero on a laptop, transparent background
+  desktop/             # 2880×1800 screenshots (1440×900 @2x)
+    home-NN.jpg        #   home page, section by section, top to bottom
+    page-*.jpg         #   main pages from the navigation (+ "-2" = scrolled)
+    x-*.jpg            #   extra pages and states: dashboards (+ dark mode), product pages,
+                       #   checkout, member card, admin, 3D viewer states, and so on
+  mobile/              # 1170×2532 screenshots (390×844 @3x)
+  components/          # UI parts cut out as PNG with transparent corners (cards, panels, widgets)
+```
+
+The demo badge is hidden in all captures. Photos inside the screenshots are Unsplash stock (see each `CREDITS.txt`).
+
 ## Highlights
 
 - **Lumetric, Tandem, Stockroom:** landing page plus a full dashboard app (hash routing, demo data, pricing calculators). Tandem's AI features are rule-based and run on the demo data.
@@ -35,6 +65,7 @@ NN-name/
   js/             # all scripts
   photos/         # Unsplash stock photos (sites 04–09)
   CREDITS.txt     # photo sources and notes (sites 04–09)
+  preview/        # cover, laptop mockup and screenshots for portfolio content
 ```
 
 JavaScript files per site:
