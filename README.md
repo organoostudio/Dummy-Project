@@ -42,6 +42,11 @@ NN-name/preview/
                        #   checkout, member card, admin, 3D viewer states, and so on
   mobile/              # 1170×2532 screenshots (390×844 @3x)
   components/          # UI parts cut out as PNG with transparent corners (cards, panels, widgets)
+  mockups/             # 3200×2400 Dribbble-style shots on a blurred backdrop in the site's own colours
+    NN-mockup-1-hero.jpg            #   hero in a clean window, category chip, wordmark and year
+    NN-mockup-2-collage.jpg         #   tilted board of the best sections and app screens
+    NN-mockup-3-desktop-mobile.jpg  #   desktop page + mobile view, fading into a soft blur
+    NN-mockup-4-page.jpg            #   one standout page, fading into a soft blur
   video/
     NN-name-home.mp4   # smooth auto-scroll through the home page, cursor visiting each section
     NN-name-tour.mp4   # full walkthrough that clicks through the main features
@@ -49,7 +54,7 @@ NN-name/preview/
 
 Videos are 1920×1080 H.264 screen recordings (60 fps; Strata Atelier 30 fps because of its WebGL scenes). They were rendered frame by frame, so motion is perfectly smooth with no dropped frames.
 
-The demo badge is hidden in all captures. Photos inside the screenshots are Unsplash stock (see each `CREDITS.txt`).
+The mockups were captured with each site's real Google Fonts. The demo badge is hidden in all captures. Photos inside the screenshots are Unsplash stock (see each `CREDITS.txt`).
 
 ## Highlights
 

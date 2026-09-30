@@ -132,8 +132,8 @@ canvas.gl{position:absolute;inset:0;width:100%!important;height:100%!important;d
 .hud>*{pointer-events:none}
 .chap button,.final.on a{pointer-events:auto}
 .hero-w{position:absolute;inset:0;padding:calc(var(--pad) + 70px) var(--pad) var(--pad);display:grid;grid-template-rows:auto 1fr auto;transition:opacity .6s,transform .8s var(--ease)}
-.hero-w .big{font-family:var(--f-d);font-weight:800;font-size:clamp(64px,13.5vw,250px);line-height:.8;letter-spacing:-.055em;display:flex;justify-content:space-between;gap:20px}
-.hero-w .big span{display:inline-block;overflow:hidden;padding-bottom:.06em}
+.hero-w .big{font-family:var(--f-d);font-weight:800;font-size:clamp(64px,9.6vw,250px);line-height:.8;letter-spacing:-.055em;display:flex;justify-content:space-between;gap:20px}
+.hero-w .big span{display:inline-block;overflow:hidden;padding-bottom:.06em;white-space:nowrap}
 .hero-w .big span i{display:inline-block;font-style:normal;transform:translateY(110%);transition:transform 1.4s var(--ease);transition-delay:calc(var(--i)*.05s + .15s)}
 .ready .hero-w .big span i{transform:none}
 .hero-w .big .r{color:var(--stone)}
