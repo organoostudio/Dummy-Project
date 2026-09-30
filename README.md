@@ -42,7 +42,12 @@ NN-name/preview/
                        #   checkout, member card, admin, 3D viewer states, and so on
   mobile/              # 1170×2532 screenshots (390×844 @3x)
   components/          # UI parts cut out as PNG with transparent corners (cards, panels, widgets)
+  video/
+    NN-name-home.mp4   # smooth auto-scroll through the home page, cursor visiting each section
+    NN-name-tour.mp4   # full walkthrough that clicks through the main features
 ```
+
+Videos are 1920×1080 H.264 screen recordings (60 fps; Strata Atelier 30 fps because of its WebGL scenes). They were rendered frame by frame, so motion is perfectly smooth with no dropped frames.
 
 The demo badge is hidden in all captures. Photos inside the screenshots are Unsplash stock (see each `CREDITS.txt`).
 
@@ -65,7 +70,7 @@ NN-name/
   js/             # all scripts
   photos/         # Unsplash stock photos (sites 04–09)
   CREDITS.txt     # photo sources and notes (sites 04–09)
-  preview/        # cover, laptop mockup and screenshots for portfolio content
+  preview/        # cover, laptop mockup, screenshots and screen-recording videos
 ```
 
 JavaScript files per site:
